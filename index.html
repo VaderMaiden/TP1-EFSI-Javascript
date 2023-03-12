@@ -13,9 +13,9 @@
 <body>
 
     <div>
-        <h1 class="bold-900">Tus notas insanas 👻</h1>
+        <h1 class="bold-900 title">Tus notas insanas 👻</h1>
+        <p class="subtitle">© Iñaki Perez, Bautista Sepulveda</p>
     </div>
-
     <form action="" id="Form">
         <div>
             <label for="inputMatematica">Matematica</label>
@@ -31,13 +31,21 @@
             <label for="inputEfsi">Efsi</label>
             <input type="number" id="inputEfsi">
         </div>
-        <div>
+        <div class="button-div">
             <button type="button" id="Promedio" onclick="calculateAverage()">Calcular promedio</button>
             <button type="button" id="MayorNota" onclick="searchHighestScore()">Mostrar mayor nota</button>
         </div>
     </form>
 
-    <div id="Resultado"></div>
+    <div id="Resultado" class="resultado">¡Ingresa las notas y elegi una opcion!</div>
+    <div>
+        <a href="https://github.com/VaderMaiden/TP1-EFSI-Javascript">
+            <img src="github-icon.svg" alt="github-icon" title="icon" class="icon">
+        </a>
+        <p style="margin-top: 2px;">Github</p>
+    </div>
+
+    <div class="blob"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
     <script type="text/javascript" src="main.js"></script>

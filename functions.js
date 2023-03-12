@@ -78,22 +78,22 @@ function searchHighestScore() {
     inputMath.labels[0].style.color = "blue";
     materiasMayorNota.push("Matematica");
   }else{
-  inputMath.labels[0].style.color = "black";}
+  inputMath.labels[0].style.color = "white";}
 
   if (parseFloat(inputLengua.value) === highestScore){
     inputLengua.labels[0].style.color = "blue";
     materiasMayorNota.push("Lengua");
   }else{
-    inputLengua.labels[0].style.color = "black";}
+    inputLengua.labels[0].style.color = "white";}
 
   if (parseFloat(inputEfsi.value) === highestScore){
     inputEfsi.labels[0].style.color = "blue";
     materiasMayorNota.push("Efsi");
   }else{
-  inputEfsi.labels[0].style.color = "black";}
+  inputEfsi.labels[0].style.color = "white";}
 
-  resultado.innerHTML = `Nota más altas en: ${materiasMayorNota.join(", ")} con un ${highestScore}`;
-  resultado.style.color = "black";
+  resultado.innerHTML = `Nota más alta en: ${materiasMayorNota.join(", ")} con un ${highestScore}`;
+  resultado.style.color = "white";
 }
 
 /**
