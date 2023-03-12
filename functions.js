@@ -14,6 +14,8 @@
 //   }
 // }
 
+const jsConfetti = new JSConfetti();
+
 /**Valida si el input es correcto, cambia su color dependiendo del resultado
   */
 function validateScore(input){
@@ -30,6 +32,11 @@ function validateScore(input){
 /**Calcular promedio de un array, inserta resultado en el div
   */
 function calculateAverage() {
+  // Valido si los inputs son validos
+  if (!validateScoreInputs()) {
+    return alert("Error. El valor debera ser un numero entre 1 y 10 inclusives.");
+  }
+  
   let numsElements = Array.from(form.querySelectorAll('input[type="number"]'));
   let nums = numsElements.map((numero) => numero.value);
 
@@ -42,15 +49,12 @@ function calculateAverage() {
   });
   promedio = total / nums.length; // Saco el promedio
 
-  // Valido si los inputs son validos
-  if (!validateScoreInputs()) {
-    return alert("Error. El valor debera ser un numero entre 1 y 10 inclusives.");
-  }
   promedio = parseFloat(promedio);
   promedio = Number.isInteger(promedio) ? promedio : promedio.toFixed(2); // En caso de que no sea un numero entero muestro los dos digitos despues del punto decimal
 
   if (promedio >= 6) {
     resultado.style.color = "green";
+    jsConfetti.addConfetti();
   } else {
     resultado.style.color = "red";
   }
@@ -68,20 +72,25 @@ function searchHighestScore() {
     return alert("Error. El valor debera ser un numero entre 1 y 10 inclusives.");
   }
 
-  let highestScore = Math.max(parseFloat(inputMath.value), parseFloat(inputLengua.value), parseFloat(inputEfsi.value));
+  let highestScore = Math.max(parseFloat(inputMath.value), parseFloat(inputLengua.value), parseFloat(inputEfsi.value)); // En vez de recorrerlo con un for, utilizo max
 
   if (parseFloat(inputMath.value) === highestScore){
     inputMath.labels[0].style.color = "blue";
     materiasMayorNota.push("Matematica");
-  }
+  }else{
+  inputMath.labels[0].style.color = "black";}
+
   if (parseFloat(inputLengua.value) === highestScore){
     inputLengua.labels[0].style.color = "blue";
     materiasMayorNota.push("Lengua");
-  }
+  }else{
+    inputLengua.labels[0].style.color = "black";}
+
   if (parseFloat(inputEfsi.value) === highestScore){
     inputEfsi.labels[0].style.color = "blue";
     materiasMayorNota.push("Efsi");
-  }
+  }else{
+  inputEfsi.labels[0].style.color = "black";}
 
   resultado.innerHTML = `Nota más altas en: ${materiasMayorNota.join(", ")} con un ${highestScore}`;
   resultado.style.color = "black";
