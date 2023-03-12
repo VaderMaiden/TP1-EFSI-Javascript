@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TP1 - insano 👻</title>
+    <link rel="stylesheet" href="style.css">
+    <title>TP1 - Efsi</title>
 </head>
 <body>
 
@@ -14,27 +15,28 @@
 
     <form action="" id="Form">
         <div>
-            <label for="inputMatematica">Nota de matematica</label>
+            <label for="inputMatematica">Matematica</label>
             <input type="number" id="inputMatematica">
         </div>
     
         <div>
-            <label for="inputLengua">Nota de lengua</label>
+            <label for="inputLengua">Lengua</label>
             <input type="number" id="inputLengua" >
         </div>
     
         <div>
-            <label for="inputEfsi">Nota de Efsi</label>
+            <label for="inputEfsi">Efsi</label>
             <input type="number" id="inputEfsi">
         </div>
         <div>
-            <button type="submit" id="Promedio">Calcular promedio</button>
-            <button type="submit" id="MayorNota">Mostrar mayor nota</button>
+            <button type="button" id="Promedio" onclick="calculateAverage()">Calcular promedio</button>
+            <button type="button" id="MayorNota" onclick="searchHighestScore()">Mostrar mayor nota</button>
         </div>
     </form>
 
     <div id="Resultado"></div>
 
     <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="functions.js"></script>
 </body>
 </html>
