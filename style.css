@@ -13,6 +13,18 @@ input::-webkit-inner-spin-button {
 
 .title{
     font-size: 70px;
+    font-weight: 900;
+    position: relative;
+    display: flex;
+    z-index: 50;
+    text-align: center;
+}
+
+.subtitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(240, 248, 255, 0.589);
 }
 
 body{
@@ -26,12 +38,6 @@ body{
     gap: 30px;
 }
 
-.subtitle{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgba(240, 248, 255, 0.589);
-}
 
 /* Firefox */
 input[type=number] {
@@ -72,10 +78,6 @@ form{
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.bold-900{
-    font-weight: 900;
-}
-
 button{
     background-color: #ff663f;
     color: white;
@@ -107,12 +109,15 @@ button:hover{
 }
 
 .icon{
+    z-index: 50;
     background-color: rgba(175, 175, 175, 0.89);
     border-radius: 50%;
     padding: 10px;
+    position: relative;
 }
 
 .blob{
+    z-index: 1;
     position: fixed;
     width: 600px;
     height: 600px;
